@@ -154,7 +154,7 @@ def triangulate(P1, pts1, P2, pts2):
     err = 0
     for i in range(N):
         err += math.sqrt(np.sum((pts1_new[i] - pts1[i])**2))
-    return pts3d, err
+    return pts3d, err/N
 
 
 """

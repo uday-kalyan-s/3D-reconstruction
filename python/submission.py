@@ -100,11 +100,12 @@ def epipolar_correspondences(im1, im2, F, pts1):
                 if delta < min_delta:
                     min_delta = delta
                     max_pt = (x2,yf)
-            if yc > w and yc < im1.shape[0]-w:
-                delta = calc_delta(im1, im2, (x2, yc), pt)
-                if delta < min_delta:
-                    min_delta = delta
-                    max_pt = (x2,yc)
+            # considering this is giving worse off results
+            # if yc > w and yc < im1.shape[0]-w:
+            #     delta = calc_delta(im1, im2, (x2, yc), pt)
+            #     if delta < min_delta:
+            #         min_delta = delta
+            #         max_pt = (x2,yc)
         pts2[ind] = np.array(max_pt)
     return pts2
 

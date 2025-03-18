@@ -56,7 +56,6 @@ for index in range(4):
     errs.append(err)
     num_ahead.append(check_ahead(pts3d, Extr2))
 
-
 best_ind = num_ahead.index(max(num_ahead))
 print(errs, num_ahead)
 best_extr = Extr2s[:,:,best_ind]

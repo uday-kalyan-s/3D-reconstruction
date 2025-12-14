@@ -205,7 +205,7 @@ def get_disparity(im1, im2, max_disp, win_size):
             min_dist = dist_map # best_disparity_map is already set to zeroes
         else:
             best_disparity_map = np.where(dist_map < min_dist, d, best_disparity_map)
-            min_dist = np.minimum(dist_map, best_disparity_map)
+            min_dist = np.minimum(dist_map, min_dist)
     return best_disparity_map
 
 """
